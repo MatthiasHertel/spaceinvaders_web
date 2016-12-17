@@ -13,16 +13,15 @@
     <!-- Styles -->
     <!-- <link href="/css/app.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- {{ Html::style('css/theme.min.css') }} -->
+
     {{ Html::style('css/cyborg/bootstrap.min.css') }}
     {{ Html::style('css/custom.css') }}
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
-        ]); ?>
+        ]); !!}
     </script>
 </head>
 <body>
