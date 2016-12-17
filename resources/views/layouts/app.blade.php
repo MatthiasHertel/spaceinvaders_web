@@ -41,7 +41,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <!-- {{ config('app.name', 'Spaceinvaders') }} -->
-                        <img src="http://www.unixstickers.com/image/data/stickers/spaceinvaders/Space-large-invader.sh.png" alt="">
+                        <img src="/img/Space-large-invader.sh.png" alt="">
                     </a>
                 </div>
 
