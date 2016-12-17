@@ -15,4 +15,12 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'HighscoreController@Index');
+Route::get('/', 'PagesController@getIndex');
+Route::get('/highscore', 'PagesController@getHighscore')->name('highscore');
+Route::get('/dokumentation', 'PagesController@getDokumentation')->name('dokumentation');
+Route::get('/download', 'PagesController@getDownload')->name('download');
+
+
+Route::get('/intern', 'InternController@getIntern')->name('intern');
+
+Auth::routes();
