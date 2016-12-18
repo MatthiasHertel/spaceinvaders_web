@@ -70,11 +70,11 @@ $style = [
                     <!-- Logo -->
                     <tr>
                         <td style="{{ $style['email-masthead'] }}">
-                            <img width="25px" height="25px" src="http://spaceinvaders_web.app/img/Space-large-invader.sh.png" alt="" style="padding:0px; margin:0px;">
+                            <img width="25px" height="25px" src="{{ asset('img/Space-large-invader.sh.png') }}" alt="" style="padding:0px; margin:0px;">
                             <a style="{{ $fontFamily }} {{ $style['email-masthead_name'] }}" href="{{ url('/') }}" target="_blank">
                                 {{ config('app.name') }}
                             </a>
-                            <img width="25px" height="25px" src="http://spaceinvaders_web.app/img/Space-large-invader.sh.png" alt="" style="padding:0px; margin:0px;">
+                            <img width="25px" height="25px" src="{{ asset('img/Space-large-invader.sh.png') }}" alt="" style="padding:0px; margin:0px;">
                         </td>
                     </tr>
 
