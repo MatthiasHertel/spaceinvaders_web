@@ -6,6 +6,7 @@ use DB;
 use Mail;
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
 use App\Mail\EmailVerification;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
