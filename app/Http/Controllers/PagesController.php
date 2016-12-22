@@ -33,7 +33,7 @@ class PagesController extends Controller
     // Highscore page with Data from DB
     public function getHighscore()
     {
-      $highscores = Highscore::orderBy('id', 'desc')->paginate(10);
+      $highscores = Highscore::orderBy('punkte', 'desc')->paginate(10);
       return view('pages.highscore')->withHighscores($highscores);
     }
 }
