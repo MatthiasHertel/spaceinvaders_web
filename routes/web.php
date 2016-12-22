@@ -24,3 +24,4 @@ Route::get('/download', 'PagesController@getDownload')->name('download');
 Route::get('/intern', 'InternController@getIntern')->name('intern');
 
 Auth::routes();
+Route::get('register/verify/{token}','Auth\RegisterController@verify');
