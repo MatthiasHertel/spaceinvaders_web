@@ -34,4 +34,10 @@ class User extends Authenticatable
         $this->email_token = null;
         $this->save();
     }
+
+    // setup the relation to the role Model
+    public function roles()
+    {
+      return $this->belongsToMany('App\Role', 'user_role', 'user_id', 'role_id');
+    }
 }
