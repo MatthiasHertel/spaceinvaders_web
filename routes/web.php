@@ -22,6 +22,7 @@ Route::get('/download', 'PagesController@getDownload')->name('download');
 
 
 Route::get('/intern', 'InternController@getIntern')->name('intern');
+Route::get('/admin', 'InternController@getAdmin')->name('admin');
 
 Auth::routes();
 Route::get('register/verify/{token}','Auth\RegisterController@verify');

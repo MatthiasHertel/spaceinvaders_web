@@ -61,7 +61,21 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li class="{{ Request::is('intern') ? "active" : "" }}"><a href="/intern">Interner Bereich</a></li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Interner Bereich <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li class="{{ Request::is('intern') ? "active" : "" }}">
+                                  <a href="/intern">Intern</a>
+                                </li>
+                                <li class="{{ Request::is('admin') ? "active" : "" }}">
+                                  <a href="/admin">Admin</a>
+                                </li>
+                              </ul>
+                            </li>
+
+                            <!-- <li class="{{ Request::is('intern') ? "active" : "" }}"><a href="/intern">Interner Bereich</a></li> -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
