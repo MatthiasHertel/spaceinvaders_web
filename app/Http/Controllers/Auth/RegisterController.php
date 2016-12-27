@@ -6,6 +6,7 @@ use DB;
 use Mail;
 use Session;
 use App\User;
+use App\Role;
 use Validator;
 use Illuminate\Http\Request;
 use App\Mail\EmailVerification;
@@ -93,6 +94,9 @@ class RegisterController extends Controller
         try
         {
             $user = $this->create($request->all());
+            // add default role user by registration
+            $user->roles()->attach(Role::where('name', 'User')->first());
+
             // After creating the user send an email with the random token generated in the create method above
             $email = new EmailVerification(new User(['email_token' => $user->email_token]));
             Mail::to($user->email)->send($email);
