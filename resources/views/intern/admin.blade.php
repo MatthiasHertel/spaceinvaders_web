@@ -4,6 +4,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+          @if (Session::has('message'))
+            <div class="alert alert-info">
+              {{ Session::get('message') }}
+              {{ Session::get('user') }}
+              <ul>
+
+              @foreach (Session::get('role') as $role)
+                <li>
+                  {{ $role }}
+                </li>
+              @endforeach
+              </ul>
+
+             </div>
+          @endif
             <div class="panel panel-default">
               <div class="panel-heading">Admin Area Users</div>
               <div class="panel-body">
@@ -22,7 +37,7 @@
                   <tbody>
                     @foreach($users as $user)
                     <tr>
-                      <form class="" action="index.html" method="post">
+                      <form action="/intern/admin/assign-roles" method="post">
                         <div class="form-group">
                           <td>{{ $user->id }}</td>
                           <td>{{ $user->name }}</td>
