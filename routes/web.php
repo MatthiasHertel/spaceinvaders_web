@@ -20,9 +20,16 @@ Route::get('/highscore', 'PagesController@getHighscore')->name('highscore');
 Route::get('/dokumentation', 'PagesController@getDokumentation')->name('dokumentation');
 Route::get('/download', 'PagesController@getDownload')->name('download');
 
-
-Route::get('/intern', 'InternController@getIntern')->name('intern');
-Route::get('/admin', 'InternController@getAdmin')->name('admin');
+Route::group(['prefix' => 'intern'], function () {
+  Route::get('/intern', 'InternController@getIntern')->name('intern.intern');
+  Route::get('/admin', 'InternController@getAdmin')->name('intern.admin');
+  Route::post('/admin/assign-roles', [
+          'uses' => 'InternController@postAdminAssignRoles',
+          'as' => 'intern.admin.assign',
+          'middleware' => 'roles',
+          'roles' => ['Admin']
+      ]);
+});
 
 Auth::routes();
 Route::get('register/verify/{token}','Auth\RegisterController@verify');

@@ -66,11 +66,11 @@
                                 Interner Bereich <span class="caret"></span>
                               </a>
                               <ul class="dropdown-menu" role="menu">
-                                <li class="{{ Request::is('intern') ? "active" : "" }}">
-                                  <a href="/intern">Intern</a>
+                                <li class="{{ Request::is('intern/intern') ? "active" : "" }}">
+                                  <a href="/intern/intern">Intern</a>
                                 </li>
-                                <li class="{{ Request::is('admin') ? "active" : "" }}">
-                                  <a href="/admin">Admin</a>
+                                <li class="{{ Request::is('intern/admin') ? "active" : "" }}">
+                                  <a href="/intern/admin">Admin</a>
                                 </li>
                               </ul>
                             </li>
