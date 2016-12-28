@@ -49,6 +49,12 @@ Route::group(['prefix' => 'intern'], function () {
           'middleware' => 'roles',
           'roles' => ['Admin']
       ]);
+  Route::get('/monitoring', [
+          'uses' => 'InternController@getMonitoring',
+          'as' => 'intern.monitoring',
+          'middleware' => ['roles' ],
+          'roles' => ['Admin']
+      ]);
 });
 
 Auth::routes();

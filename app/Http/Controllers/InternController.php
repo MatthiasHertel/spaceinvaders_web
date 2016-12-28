@@ -72,4 +72,16 @@ class InternController extends Controller
       Session::flash('role', $roles_has);
       return redirect()->back();
     }
+
+    /**
+     * Show the intern area monitoringpage.
+     * access by admins
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getMonitoring()
+    {
+        return view('intern.monitoring');
+    }
+
 }

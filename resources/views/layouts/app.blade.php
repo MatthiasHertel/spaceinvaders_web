@@ -74,6 +74,9 @@
                                 <li class="{{ Request::is('intern/admin') ? "active" : "" }}">
                                   <a href="/intern/admin">Admin</a>
                                 </li>
+                                <li class="{{ Request::is('intern/monitoring') ? "active" : "" }}">
+                                  <a href="/intern/monitoring">Monitoring</a>
+                                </li>
                                 @endif
 
 
