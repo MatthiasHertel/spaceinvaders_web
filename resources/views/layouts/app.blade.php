@@ -55,6 +55,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
+
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
@@ -69,9 +70,13 @@
                                 <li class="{{ Request::is('intern/intern') ? "active" : "" }}">
                                   <a href="/intern/intern">Intern</a>
                                 </li>
+                                @if (Auth::user()->hasRole('Admin'))
                                 <li class="{{ Request::is('intern/admin') ? "active" : "" }}">
                                   <a href="/intern/admin">Admin</a>
                                 </li>
+                                @endif
+
+
                               </ul>
                             </li>
 
