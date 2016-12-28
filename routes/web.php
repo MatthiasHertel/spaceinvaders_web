@@ -15,14 +15,34 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'PagesController@getIndex');
-Route::get('/highscore', 'PagesController@getHighscore')->name('highscore');
-Route::get('/dokumentation', 'PagesController@getDokumentation')->name('dokumentation');
-Route::get('/download', 'PagesController@getDownload')->name('download');
+Route::get('/', [
+        'uses' => 'PagesController@getIndex',
+        'as' => 'index'
+    ]);
+Route::get('/highscore', [
+        'uses' => 'PagesController@getHighscore',
+        'as' => 'highscore'
+    ]);
+Route::get('/dokumentation', [
+        'uses' => 'PagesController@getDokumentation',
+        'as' => 'dokumentation'
+    ]);
+Route::get('/download', [
+        'uses' => 'PagesController@getDownload',
+        'as' => 'download'
+    ]);
 
 Route::group(['prefix' => 'intern'], function () {
-  Route::get('/intern', 'InternController@getIntern')->name('intern.intern');
-  Route::get('/admin', 'InternController@getAdmin')->name('intern.admin');
+  Route::get('/intern', [
+          'uses' => 'InternController@getIntern',
+          'as' => 'intern.intern'
+      ]);
+  Route::get('/admin', [
+          'uses' => 'InternController@getAdmin',
+          'as' => 'intern.admin',
+          'middleware' => ['roles' ],
+          'roles' => ['Admin']
+      ]);
   Route::post('/admin/assign-roles', [
           'uses' => 'InternController@postAdminAssignRoles',
           'as' => 'intern.admin.assign',
@@ -32,4 +52,7 @@ Route::group(['prefix' => 'intern'], function () {
 });
 
 Auth::routes();
-Route::get('register/verify/{token}','Auth\RegisterController@verify');
+Route::get('register/verify/{token}', [
+        'uses' => 'Auth\RegisterController@verify',
+        'as' => 'verify'
+    ]);
