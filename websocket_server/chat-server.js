@@ -10,6 +10,7 @@ var webSocketsServerPort = 1337;
 // websocket and http servers
 var webSocketServer = require('websocket').server;
 var http = require('http');
+var fs = require("fs");
 
 /**
  * Global variables
@@ -33,10 +34,16 @@ var colors = [ 'red', 'green', 'blue', 'magenta', 'purple', 'plum', 'orange' ];
 // ... in random order
 colors.sort(function(a,b) { return Math.random() > 0.5; } );
 
+// credentials (need for production)
+// var privateKey  = fs.readFileSync('/etc/letsencrypt/live/mhertel.de/privkey.pem', 'utf8');
+// var certificate = fs.readFileSync('/etc/letsencrypt/live/mhertel.de/cert.pem', 'utf8');
+// var credentials = {key: privateKey, cert: certificate};
+
 /**
  * HTTP server
  */
 var server = http.createServer(function(request, response) {
+//var server = http.createServer(function(request, response) {
     // Not important for us. We're writing WebSocket server, not HTTP server
 });
 server.listen(webSocketsServerPort, function() {

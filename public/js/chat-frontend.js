@@ -24,7 +24,8 @@ $(function () {
     }
 
     // open connection
-    var connection = new WebSocket('ws://mhertel.de:1337');
+    var connection = new WebSocket('wss://mhertel.de:1337');
+    // var connection = new WebSocket('ws://localhost:1337');
 
     connection.onopen = function () {
         // on connect send first of all myName
