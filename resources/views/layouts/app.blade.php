@@ -88,9 +88,7 @@
 
                             <!-- <li class="{{ Request::is('intern') ? "active" : "" }}"><a href="/intern">Interner Bereich</a></li> -->
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                <a href="#" id="username" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }}<span class="caret"></span></a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
@@ -117,5 +115,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    @yield('scripts')
 </body>
 </html>

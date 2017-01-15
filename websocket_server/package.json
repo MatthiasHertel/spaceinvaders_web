@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "websocket" : "^1.0.24"
+  }
+}
