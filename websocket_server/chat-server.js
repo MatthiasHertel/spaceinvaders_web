@@ -10,6 +10,7 @@ var webSocketsServerPort = 1337;
 // websocket and http servers
 var webSocketServer = require('websocket').server;
 var http = require('http');
+var https = require('https');
 var fs = require("fs");
 
 /**
