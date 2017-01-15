@@ -44,7 +44,7 @@ colors.sort(function(a,b) { return Math.random() > 0.5; } );
  * HTTP server
  */
 var server = http.createServer(function(request, response) {
-//var server = http.createServer(function(request, response) {
+//var server = https.createServer(credentials, function(request, response) {
     // Not important for us. We're writing WebSocket server, not HTTP server
 });
 server.listen(webSocketsServerPort, function() {
