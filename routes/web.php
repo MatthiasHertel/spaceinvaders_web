@@ -55,6 +55,12 @@ Route::group(['prefix' => 'intern'], function () {
           'middleware' => ['roles' ],
           'roles' => ['Admin']
       ]);
+  Route::get('/chat', [
+          'uses' => 'InternController@getChat',
+          'as' => 'intern.chat',
+          'middleware' => ['roles' ],
+          'roles' => ['Admin']
+      ]);
 });
 
 Auth::routes();

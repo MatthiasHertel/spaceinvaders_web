@@ -84,4 +84,15 @@ class InternController extends Controller
         return view('intern.monitoring');
     }
 
+    /**
+     * Show the intern area monitoringpage.
+     * access by admins
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getChat()
+    {
+        return view('intern.chat');
+    }
+
 }

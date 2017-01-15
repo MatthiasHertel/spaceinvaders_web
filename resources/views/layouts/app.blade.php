@@ -72,10 +72,13 @@
                                 </li>
                                 @if (Auth::user()->hasRole('Admin'))
                                 <li class="{{ Request::is('intern/admin') ? "active" : "" }}">
-                                  <a href="/intern/admin">Admin</a>
+                                  <a href="/intern/admin">Admin User-Roles</a>
                                 </li>
                                 <li class="{{ Request::is('intern/monitoring') ? "active" : "" }}">
                                   <a href="/intern/monitoring">Monitoring</a>
+                                </li>
+                                <li class="{{ Request::is('intern/chat') ? "active" : "" }}">
+                                  <a href="/intern/chat">Chat</a>
                                 </li>
                                 @endif
 
