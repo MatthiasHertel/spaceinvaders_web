@@ -7,7 +7,7 @@
           <div class="panel panel-default">
               <div class="panel-heading">Dokumentation</div>
               <div class="panel-body">
-                  <strong>hier javadoc ...</strong>
+                  <a href="/javadoc/index.html" target="_blank">JavaDoc Dokumentation</a>
               </div>
           </div>
       </div>
